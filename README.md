@@ -3,7 +3,7 @@
 The FastAPI application serves the Ets Garba website and a WhatsApp chatbot (Meta Cloud API) backed by Claude. The website is a lightweight, bilingual static frontend in `web/`; the webhook provides per-user conversation memory, signature verification, and duplicate-delivery protection.
 
 ## Website deployment
-The website deploys to GitHub Pages at `https://adab-tech.github.io/etsgarba/` when changes are pushed to the default branch. The deployment workflow publishes the static files in `web/`; the FastAPI app and WhatsApp webhook remain available when the Python application is hosted separately.
+The website deploys from this repository to its GitHub Pages project URL when changes are pushed to the default branch. The deployment workflow publishes the static files in `web/`; the FastAPI app and WhatsApp webhook remain available when the Python application is hosted separately.
 
 ## Setup
 1. Install the dependencies:

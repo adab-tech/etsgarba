@@ -172,7 +172,9 @@ const serviceIds = [
   "contrats-marches",
   "externalisation-internationale"
 ];
-const BASE_PATH = location.hostname.endsWith(".github.io") ? "/etsgarba" : "";
+const BASE_PATH = location.pathname === "/etsgarba" || location.pathname.startsWith("/etsgarba/")
+  ? "/etsgarba"
+  : "";
 let language = localStorage.getItem("etsgarba-language") || "en";
 const app = document.querySelector("#app");
 const nav = document.querySelector(".primary-nav");
