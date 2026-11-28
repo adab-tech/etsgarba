@@ -173,13 +173,13 @@ const serviceIds = [
   "externalisation-internationale"
 ];
 const serviceVisuals = [
-  ["general-trade.jpg", "Fresh produce in a grocery market", "Produits frais dans un marché alimentaire"],
-  ["import-export.jpg", "Cargo ship carrying containers at sea", "Navire de marchandises transportant des conteneurs en mer"],
+  ["general-trade.jpg", "A produce seller's baskets at a Ghanaian market", "Paniers d’un vendeur de produits frais sur un marché ghanéen"],
+  ["import-export.jpg", "A container ship crossing the sea", "Un porte-conteneurs en mer"],
   ["automotive.jpg", "Mechanic repairing a vehicle", "Mécanicien réparant un véhicule"],
-  ["vehicle-rental.jpg", "Cars parked together", "Voitures stationnées ensemble"],
+  ["vehicle-rental.jpg", "Passenger van parked outdoors", "Minibus stationné à l’extérieur"],
   ["equipment.jpg", "Technician servicing electronic equipment", "Technicien réparant du matériel électronique"],
-  ["contracts.jpg", "Two people reviewing a document", "Deux personnes examinant un document"],
-  ["international-partners.jpg", "Business colleagues meeting", "Collègues en réunion d’affaires"]
+  ["contracts.jpg", "Two people reviewing a project document outdoors", "Deux personnes examinant un document de projet à l’extérieur"],
+  ["international-partners.jpg", "Colleagues discussing a document together", "Des collègues discutant ensemble d’un document"]
 ];
 const illustrativePhotoNote = language => language === "fr"
   ? "Photo d’illustration — ne représente pas les activités ou les véhicules d’Ets Garba."
