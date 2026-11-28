@@ -1,16 +1,27 @@
-# etsgarba – WhatsApp AI assistant
+# Ets Garba — website and WhatsApp assistant
 
-A WhatsApp chatbot (Meta Cloud API) backed by Claude. FastAPI webhook, per-user conversation memory, signature verification, duplicate-delivery protection.
+The FastAPI application serves the Ets Garba website and a WhatsApp chatbot (Meta Cloud API) backed by Claude. The website is a lightweight, bilingual static frontend in `web/`; the webhook provides per-user conversation memory, signature verification, and duplicate-delivery protection.
+
+## Website deployment
+The website deploys to GitHub Pages at `https://adab-tech.github.io/etsgarba/` when changes are pushed to the default branch. The deployment workflow publishes the static files in `web/`; the FastAPI app and WhatsApp webhook remain available when the Python application is hosted separately.
 
 ## Setup
-1. Create a Meta app with the WhatsApp product; note the **access token**, **phone number ID**, and **app secret**.
-2. `cp .env.example .env` and fill in the values (plus `ANTHROPIC_API_KEY`).
-3. Install and run:
+1. Install the dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
+2. Run the application:
+   ```bash
    uvicorn app.main:get_app --factory --port 8000
    ```
-4. Expose it (e.g. `ngrok http 8000`) and set the webhook in Meta to `https://<host>/webhook` with your `WHATSAPP_VERIFY_TOKEN`; subscribe to the `messages` field.
+3. Visit `http://localhost:8000`. The website is served from the same app as the WhatsApp webhook.
+
+## WhatsApp setup
+1. Create a Meta app with the WhatsApp product; note the **access token**, **phone number ID**, and **app secret**.
+2. Copy `.env.example` to `.env` and fill in the values (plus `ANTHROPIC_API_KEY`).
+3. Expose the app (e.g. `ngrok http 8000`) and set the webhook in Meta to `https://<host>/webhook` with your `WHATSAPP_VERIFY_TOKEN`; subscribe to the `messages` field.
+
+The website's quote form prepares an email to `contact@etsgarba.com`; it does not submit personal information to the server. Phone, WhatsApp, street address, and opening hours are intentionally omitted until verified details are available.
 
 ## Behaviour
 - Text messages go to Claude; replies are sent back, split if over WhatsApp's 4096-char limit.

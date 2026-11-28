@@ -1,8 +1,11 @@
 import json
 import logging
 from collections import OrderedDict
+from pathlib import Path
 
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Query, Request, Response
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from .assistant import Assistant
 from .config import Settings, get_settings
@@ -26,6 +29,7 @@ def create_app(
     seen: OrderedDict[str, None] = OrderedDict()  # dedupe Meta's webhook retries
 
     app = FastAPI(title="etsgarba WhatsApp assistant")
+    web_dir = Path(__file__).resolve().parent.parent / "web"
 
     @app.get("/health")
     async def health():
@@ -77,6 +81,18 @@ def create_app(
                 continue
             background.add_task(handle, msg)
         return {"status": "ok"}  # always 200 fast so Meta doesn't retry
+
+    app.mount("/static", StaticFiles(directory=web_dir / "static"), name="web_static")
+
+    @app.get("/", include_in_schema=False)
+    async def website_home():
+        return FileResponse(web_dir / "index.html")
+
+    @app.get("/{page:path}", include_in_schema=False)
+    async def website_page(page: str):
+        if page not in {"a-propos", "direction", "services", "contact"}:
+            raise HTTPException(404, "page not found")
+        return FileResponse(web_dir / "index.html")
 
     return app
 

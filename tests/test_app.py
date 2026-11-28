@@ -75,6 +75,14 @@ def test_verify_handshake():
     assert c.get("/webhook", params={"hub.mode": "subscribe", "hub.verify_token": "no", "hub.challenge": "42"}).status_code == 403
 
 
+def test_website_routes_and_assets():
+    c, *_ = make()
+    assert c.get("/").status_code == 200
+    assert c.get("/services").status_code == 200
+    assert c.get("/static/site.css").status_code == 200
+    assert c.get("/not-a-page").status_code == 404
+
+
 def test_rejects_bad_signature():
     c, wa, _ = make()
     r = c.post("/webhook", content=b"{}", headers={"X-Hub-Signature-256": "sha256=bad"})
