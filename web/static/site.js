@@ -173,14 +173,17 @@ const serviceIds = [
   "externalisation-internationale"
 ];
 const serviceVisuals = [
-  ["general-trade.jpg", "Fresh produce at a market", "Produits frais sur un marché"],
-  ["import-export.jpg", "Cargo ship at a container port", "Porte-conteneurs dans un port"],
-  ["automotive.jpg", "Mechanic servicing a vehicle", "Mécanicien réparant un véhicule"],
-  ["vehicle-rental.jpg", "Cars available for hire", "Véhicules disponibles à la location"],
-  ["equipment.jpg", "Technician working on equipment", "Technicien travaillant sur des équipements"],
-  ["contracts.jpg", "Business partners reviewing a document", "Partenaires examinant un document"],
-  ["international-partners.jpg", "International business meeting", "Réunion d’affaires internationale"]
+  ["general-trade.jpg", "Fresh produce in a grocery market", "Produits frais dans un marché alimentaire"],
+  ["import-export.jpg", "Cargo ship carrying containers at sea", "Navire de marchandises transportant des conteneurs en mer"],
+  ["automotive.jpg", "Mechanic repairing a vehicle", "Mécanicien réparant un véhicule"],
+  ["vehicle-rental.jpg", "Cars parked together", "Voitures stationnées ensemble"],
+  ["equipment.jpg", "Technician servicing electronic equipment", "Technicien réparant du matériel électronique"],
+  ["contracts.jpg", "Two people reviewing a document", "Deux personnes examinant un document"],
+  ["international-partners.jpg", "Business colleagues meeting", "Collègues en réunion d’affaires"]
 ];
+const illustrativePhotoNote = language => language === "fr"
+  ? "Photo d’illustration — ne représente pas les activités ou les véhicules d’Ets Garba."
+  : "Illustrative photo — does not depict Ets Garba’s operations or vehicles.";
 const BASE_PATH = location.pathname === "/etsgarba" || location.pathname.startsWith("/etsgarba/")
   ? "/etsgarba"
   : "";
@@ -201,7 +204,7 @@ function sectionHeading(eyebrow, title, description = "") {
 function serviceCards(t, limit = t.serviceData.length) {
   return t.serviceData.slice(0, limit).map((service, index) => `
     <a class="service-card" href="${BASE_PATH}/services#${serviceIds[index]}" data-route="/services#${serviceIds[index]}">
-      <img src="${BASE_PATH}/static/images/${serviceVisuals[index][0]}" alt="" loading="lazy">
+      <figure class="service-card-visual"><img src="${BASE_PATH}/static/images/${serviceVisuals[index][0]}" alt="" loading="lazy"><figcaption>${language === "fr" ? "Photo d’illustration" : "Illustrative photo"}</figcaption></figure>
       <span class="service-card-content"><strong>${service[0]}</strong><span>${service[1]}</span></span>
       <span class="arrow" aria-hidden="true">↗</span>
     </a>`).join("");
@@ -217,9 +220,11 @@ function homePage(t) {
         <div class="hero-actions">${routeLink("/services", `${t.explore} <span aria-hidden="true">↗</span>`, "button button-gold")}${routeLink("/contact", t.quote, "text-link text-link-light")}</div>
         <div class="hero-location"><span aria-hidden="true">⌖</span>${t.location}</div>
       </div>
-      <div class="hero-art">
-        <img class="hero-photo" src="${BASE_PATH}/static/images/import-export.jpg" alt="${language === "fr" ? "Conteneurs de marchandises dans un port international" : "Freight containers at an international shipping port"}">
-        <span class="hero-photo-caption">${language === "fr" ? "DU SOURCING À LA LIVRAISON" : "FROM SOURCING TO DELIVERY"}</span>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-map-glow"></div>
+        <img class="hero-map" src="${BASE_PATH}/static/car-flag-map.svg" alt="">
+        <span class="art-coordinates">04° 22′ N<br>18° 34′ E</span>
+        <span class="art-caption">${language === "fr" ? "RÉPUBLIQUE CENTRAFRICAINE" : "CENTRAL AFRICAN REPUBLIC"}</span>
       </div>
       <div class="hero-index"><span>01</span><span class="index-line"></span><span>07</span></div>
     </section>
@@ -262,7 +267,7 @@ function servicesPage(t) {
     <section class="page-hero"><span class="eyebrow">${t.servicesPageLabel}</span><h1>${t.servicesPageTitle}</h1><p>${t.servicesPageIntro}</p></section>
     <section class="service-details">${t.serviceData.map((service, i) => `
       <article class="service-detail" id="${serviceIds[i]}">
-        <div class="service-detail-heading"><span class="service-number">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${t.servicesPageLabel}</span><h2>${service[0]}</h2><p>${service[1]}</p><img class="service-detail-image" src="${BASE_PATH}/static/images/${serviceVisuals[i][0]}" alt="${language === "fr" ? serviceVisuals[i][2] : serviceVisuals[i][1]}" loading="lazy"></div>
+        <div class="service-detail-heading"><span class="service-number">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${t.servicesPageLabel}</span><h2>${service[0]}</h2><p>${service[1]}</p><figure class="service-detail-figure"><img class="service-detail-image" src="${BASE_PATH}/static/images/${serviceVisuals[i][0]}" alt="${language === "fr" ? serviceVisuals[i][2] : serviceVisuals[i][1]}" loading="lazy"><figcaption>${illustrativePhotoNote(language)}</figcaption></figure></div>
         <div class="service-detail-body"><p>${service[2]}</p><h3>${language === "fr" ? "Ce que cela comprend" : "What this includes"}</h3><ul>${service[3].map(item => `<li>${item}</li>`).join("")}</ul>${routeLink("/contact", `${t.quote} <span aria-hidden="true">↗</span>`, "text-link")}</div>
       </article>`).join("")}
     </section>`;
