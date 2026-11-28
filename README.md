@@ -25,6 +25,11 @@ The website's quote form prepares an email to `contact@etsgarba.com`; it does no
 
 The Central African Republic silhouette in `web/static/car-flag-map.svg` is based on Natural Earth's public-domain 1:110m country boundaries. The flag colours and star are used as a visual treatment, not as an official cartographic rendering.
 
+## Brand assets
+The header and footer use the standalone geometric Garba “G” monogram; the CAR map and flag artwork is used only as a national-pride visual, not as the company logo. The site self-hosts Fraunces and Manrope under the SIL Open Font License 1.1; the license texts are in `web/static/fonts/`.
+
+Service photography is stored locally in `web/static/images/` and used under the Unsplash License (free commercial use; attribution is appreciated). Source pages: [general trade](https://images.unsplash.com/photo-1542838132-92c53300491e), [import-export by Julia Taubitz](https://unsplash.com/photos/cargo-ship-loaded-with-containers-under-a-port-crane-5Ygg-q0NVAw), [automotive by Joseph Pillado](https://unsplash.com/photos/a-man-working-on-a-car-in-a-garage-n99UTGfbvFQ), [vehicle rental](https://images.unsplash.com/photo-1709581037745-6df19f48739c), [equipment by Valentin Lacoste](https://unsplash.com/photos/technician-working-on-network-equipment-with-tools-fJTyegEd-6k), [contracts by Mugabi Owen](https://unsplash.com/photos/two-men-looking-at-a-document-outdoors-kTfmE3gO2bQ), and [international representation by Vitaly Gariev](https://unsplash.com/photos/three-business-people-in-suits-discussing-documents-yR2kWLLtcmg).
+
 ## Behaviour
 - Text messages go to Claude; replies are sent back, split if over WhatsApp's 4096-char limit.
 - Send `/reset` to clear a conversation.

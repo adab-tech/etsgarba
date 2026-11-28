@@ -172,6 +172,15 @@ const serviceIds = [
   "contrats-marches",
   "externalisation-internationale"
 ];
+const serviceVisuals = [
+  ["general-trade.jpg", "Fresh produce at a market", "Produits frais sur un marché"],
+  ["import-export.jpg", "Cargo ship at a container port", "Porte-conteneurs dans un port"],
+  ["automotive.jpg", "Mechanic servicing a vehicle", "Mécanicien réparant un véhicule"],
+  ["vehicle-rental.jpg", "Cars available for hire", "Véhicules disponibles à la location"],
+  ["equipment.jpg", "Technician working on equipment", "Technicien travaillant sur des équipements"],
+  ["contracts.jpg", "Business partners reviewing a document", "Partenaires examinant un document"],
+  ["international-partners.jpg", "International business meeting", "Réunion d’affaires internationale"]
+];
 const BASE_PATH = location.pathname === "/etsgarba" || location.pathname.startsWith("/etsgarba/")
   ? "/etsgarba"
   : "";
@@ -192,7 +201,7 @@ function sectionHeading(eyebrow, title, description = "") {
 function serviceCards(t, limit = t.serviceData.length) {
   return t.serviceData.slice(0, limit).map((service, index) => `
     <a class="service-card" href="${BASE_PATH}/services#${serviceIds[index]}" data-route="/services#${serviceIds[index]}">
-      <span class="service-number">${String(index + 1).padStart(2, "0")}</span>
+      <img src="${BASE_PATH}/static/images/${serviceVisuals[index][0]}" alt="" loading="lazy">
       <span class="service-card-content"><strong>${service[0]}</strong><span>${service[1]}</span></span>
       <span class="arrow" aria-hidden="true">↗</span>
     </a>`).join("");
@@ -255,7 +264,7 @@ function servicesPage(t) {
     <section class="page-hero"><span class="eyebrow">${t.servicesPageLabel}</span><h1>${t.servicesPageTitle}</h1><p>${t.servicesPageIntro}</p></section>
     <section class="service-details">${t.serviceData.map((service, i) => `
       <article class="service-detail" id="${serviceIds[i]}">
-        <div class="service-detail-heading"><span class="service-number">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${t.servicesPageLabel}</span><h2>${service[0]}</h2><p>${service[1]}</p></div>
+        <div class="service-detail-heading"><span class="service-number">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${t.servicesPageLabel}</span><h2>${service[0]}</h2><p>${service[1]}</p><img class="service-detail-image" src="${BASE_PATH}/static/images/${serviceVisuals[i][0]}" alt="${language === "fr" ? serviceVisuals[i][2] : serviceVisuals[i][1]}" loading="lazy"></div>
         <div class="service-detail-body"><p>${service[2]}</p><h3>${language === "fr" ? "Ce que cela comprend" : "What this includes"}</h3><ul>${service[3].map(item => `<li>${item}</li>`).join("")}</ul>${routeLink("/contact", `${t.quote} <span aria-hidden="true">↗</span>`, "text-link")}</div>
       </article>`).join("")}
     </section>`;

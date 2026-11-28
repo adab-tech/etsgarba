@@ -80,6 +80,19 @@ def test_website_routes_and_assets():
     assert c.get("/").status_code == 200
     assert c.get("/services").status_code == 200
     assert c.get("/static/site.css").status_code == 200
+    assert c.get("/static/garba-mark.svg").status_code == 200
+    for asset in (
+        "fonts/fraunces-latin.woff2",
+        "fonts/manrope-latin.woff2",
+        "images/general-trade.jpg",
+        "images/import-export.jpg",
+        "images/automotive.jpg",
+        "images/vehicle-rental.jpg",
+        "images/equipment.jpg",
+        "images/contracts.jpg",
+        "images/international-partners.jpg",
+    ):
+        assert c.get(f"/static/{asset}").status_code == 200
     map_asset = c.get("/static/car-flag-map.svg")
     assert map_asset.status_code == 200 and "Central African Republic" in map_asset.text
     assert c.get("/not-a-page").status_code == 404
