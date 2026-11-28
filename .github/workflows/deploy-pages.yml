@@ -27,6 +27,7 @@ jobs:
           mkdir -p _site
           cp -R web/. _site/
           cp web/index.html _site/404.html
+          sed -i "s/__ASSET_VERSION__/${GITHUB_SHA}/g" _site/index.html _site/404.html
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
