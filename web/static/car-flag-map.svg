@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 210" role="img" aria-labelledby="title desc">
+  <title id="title">Central African Republic map and flag</title>
+  <desc id="desc">The outline of the Central African Republic filled with the national flag's blue, white, green and yellow stripes and red vertical band.</desc>
+  <defs>
+    <clipPath id="car-outline">
+      <path d="M280,133.9L273.4,136.1L260.4,135.6L245.3,133.5L237.8,135.2L234.8,140.1L228.3,140.7L220.3,136.5L197.9,146.5L188.7,144.5L186,146L180,158.2L164.9,154.3L150.2,152.3L137.4,144.9L120.8,138L110,144.5L102.2,154.7L100.4,168.8L87.5,167.6L73.8,164.3L61.8,174.9L51.3,193.7L49.2,187.8L48.3,178.6L39,172.2L31.6,161.8L29.9,154.6L20.4,144L22,138L20,129.6L21.6,114L26.4,110.3L36.5,89.9L53.2,88.4L56.9,83.2L60.2,83.6L65.2,88.2L90.6,80.5L99.1,72.6L109.6,65.6L107.6,58.5L113.3,56.6L132.7,57.9L151.7,48.5L166.2,26.6L176.5,18.4L189.2,15L191.5,23.6L203.1,36.2L203.2,44.4L199.9,52.8L201.2,59.1L208.2,64.8L223.5,73.6L234.5,81.8L234.7,88.3L248.2,98.8L256.6,107.5L261.7,119.6L276.8,127.6L280,133.9Z"/>
+    </clipPath>
+    <linearGradient id="flag-sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".24"/>
+      <stop offset=".48" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#07171d" stop-opacity=".22"/>
+    </linearGradient>
+    <filter id="map-shadow" x="-30%" y="-30%" width="170%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset dy="5" result="offset"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path d="M280,133.9L273.4,136.1L260.4,135.6L245.3,133.5L237.8,135.2L234.8,140.1L228.3,140.7L220.3,136.5L197.9,146.5L188.7,144.5L186,146L180,158.2L164.9,154.3L150.2,152.3L137.4,144.9L120.8,138L110,144.5L102.2,154.7L100.4,168.8L87.5,167.6L73.8,164.3L61.8,174.9L51.3,193.7L49.2,187.8L48.3,178.6L39,172.2L31.6,161.8L29.9,154.6L20.4,144L22,138L20,129.6L21.6,114L26.4,110.3L36.5,89.9L53.2,88.4L56.9,83.2L60.2,83.6L65.2,88.2L90.6,80.5L99.1,72.6L109.6,65.6L107.6,58.5L113.3,56.6L132.7,57.9L151.7,48.5L166.2,26.6L176.5,18.4L189.2,15L191.5,23.6L203.1,36.2L203.2,44.4L199.9,52.8L201.2,59.1L208.2,64.8L223.5,73.6L234.5,81.8L234.7,88.3L248.2,98.8L256.6,107.5L261.7,119.6L276.8,127.6L280,133.9Z" fill="#c79b52" filter="url(#map-shadow)"/>
+  <g clip-path="url(#car-outline)">
+    <path fill="#003082" d="M0 0h300v52.5H0z"/>
+    <path fill="#fff" d="M0 52.5h300V105H0z"/>
+    <path fill="#289728" d="M0 105h300v52.5H0z"/>
+    <path fill="#ffce00" d="M0 157.5h300V210H0z"/>
+    <path fill="#d21034" d="M135 0h30v210h-30z"/>
+    <path fill="url(#flag-sheen)" d="M0 0h300v210H0z"/>
+  </g>
+  <path d="M280,133.9L273.4,136.1L260.4,135.6L245.3,133.5L237.8,135.2L234.8,140.1L228.3,140.7L220.3,136.5L197.9,146.5L188.7,144.5L186,146L180,158.2L164.9,154.3L150.2,152.3L137.4,144.9L120.8,138L110,144.5L102.2,154.7L100.4,168.8L87.5,167.6L73.8,164.3L61.8,174.9L51.3,193.7L49.2,187.8L48.3,178.6L39,172.2L31.6,161.8L29.9,154.6L20.4,144L22,138L20,129.6L21.6,114L26.4,110.3L36.5,89.9L53.2,88.4L56.9,83.2L60.2,83.6L65.2,88.2L90.6,80.5L99.1,72.6L109.6,65.6L107.6,58.5L113.3,56.6L132.7,57.9L151.7,48.5L166.2,26.6L176.5,18.4L189.2,15L191.5,23.6L203.1,36.2L203.2,44.4L199.9,52.8L201.2,59.1L208.2,64.8L223.5,73.6L234.5,81.8L234.7,88.3L248.2,98.8L256.6,107.5L261.7,119.6L276.8,127.6L280,133.9Z" fill="none" stroke="#f1d8a2" stroke-opacity=".88" stroke-width="1.5"/>
+  <path d="M56 42l2.4 7.3h7.7l-6.2 4.5 2.4 7.3-6.3-4.5-6.2 4.5 2.4-7.3-6.2-4.5h7.7z" fill="#ffce00" stroke="#fff" stroke-opacity=".65" stroke-width=".7"/>
+</svg>

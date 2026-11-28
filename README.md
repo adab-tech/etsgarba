@@ -23,6 +23,8 @@ The website deploys from this repository to its GitHub Pages project URL when ch
 
 The website's quote form prepares an email to `contact@etsgarba.com`; it does not submit personal information to the server. Phone, WhatsApp, street address, and opening hours are intentionally omitted until verified details are available.
 
+The Central African Republic silhouette in `web/static/car-flag-map.svg` is based on Natural Earth's public-domain 1:110m country boundaries. The flag colours and star are used as a visual treatment, not as an official cartographic rendering.
+
 ## Behaviour
 - Text messages go to Claude; replies are sent back, split if over WhatsApp's 4096-char limit.
 - Send `/reset` to clear a conversation.

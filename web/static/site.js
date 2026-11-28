@@ -209,10 +209,10 @@ function homePage(t) {
         <div class="hero-location"><span aria-hidden="true">⌖</span>${t.location}</div>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-        <div class="art-sun"></div><div class="art-land land-one"></div><div class="art-land land-two"></div>
+        <div class="hero-map-glow"></div>
+        <img class="hero-map" src="${BASE_PATH}/static/car-flag-map.svg" alt="">
         <span class="art-coordinates">04° 22′ N<br>18° 34′ E</span>
-        <span class="art-caption">CENTRAL AFRICAN REPUBLIC</span>
+        <span class="art-caption">${language === "fr" ? "RÉPUBLIQUE CENTRAFRICAINE" : "CENTRAL AFRICAN REPUBLIC"}</span>
       </div>
       <div class="hero-index"><span>01</span><span class="index-line"></span><span>07</span></div>
     </section>
@@ -239,7 +239,7 @@ function homePage(t) {
 function aboutPage(t) {
   return `
     <section class="page-hero"><span class="eyebrow">${t.aboutLabel}</span><h1>${t.aboutTitle}</h1><p>${t.aboutText}</p></section>
-    <section class="section story-section"><div class="story-mark" aria-hidden="true">G<span>.</span></div><div class="story-copy"><span class="eyebrow">${t.location}</span><h2>${t.missionTitle}</h2><p>${t.missionText}</p><h2>${t.visionTitle}</h2><p>${t.visionText}</p><p>${t.aboutSecond}</p></div></section>
+    <section class="section story-section"><div class="story-mark"><img src="${BASE_PATH}/static/car-flag-map.svg" alt="${language === "fr" ? "Carte de la République centrafricaine aux couleurs du drapeau national" : "Map of the Central African Republic in the national flag colours"}"></div><div class="story-copy"><span class="eyebrow">${t.location}</span><h2>${t.missionTitle}</h2><p>${t.missionText}</p><h2>${t.visionTitle}</h2><p>${t.visionText}</p><p>${t.aboutSecond}</p></div></section>
     <section class="section section-values">${sectionHeading(t.valuesEyebrow, t.valuesTitle)}<div class="values-grid">${t.values.map((value, i) => `<article class="value-card"><span>0${i + 1}</span><h3>${value[0]}</h3><p>${value[1]}</p></article>`).join("")}</div></section>
     <section class="section reach-section"><div class="reach-copy">${sectionHeading(t.marketsEyebrow, t.marketsTitle, t.marketsText)}</div><div class="market-list">${t.markets.map((market, i) => `<span><small>0${i + 1}</small>${market}</span>`).join("")}</div></section>`;
 }
