@@ -217,11 +217,9 @@ function homePage(t) {
         <div class="hero-actions">${routeLink("/services", `${t.explore} <span aria-hidden="true">↗</span>`, "button button-gold")}${routeLink("/contact", t.quote, "text-link text-link-light")}</div>
         <div class="hero-location"><span aria-hidden="true">⌖</span>${t.location}</div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-map-glow"></div>
-        <img class="hero-map" src="${BASE_PATH}/static/car-flag-map.svg" alt="">
-        <span class="art-coordinates">04° 22′ N<br>18° 34′ E</span>
-        <span class="art-caption">${language === "fr" ? "RÉPUBLIQUE CENTRAFRICAINE" : "CENTRAL AFRICAN REPUBLIC"}</span>
+      <div class="hero-art">
+        <img class="hero-photo" src="${BASE_PATH}/static/images/import-export.jpg" alt="${language === "fr" ? "Conteneurs de marchandises dans un port international" : "Freight containers at an international shipping port"}">
+        <span class="hero-photo-caption">${language === "fr" ? "DU SOURCING À LA LIVRAISON" : "FROM SOURCING TO DELIVERY"}</span>
       </div>
       <div class="hero-index"><span>01</span><span class="index-line"></span><span>07</span></div>
     </section>
