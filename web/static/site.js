@@ -173,7 +173,7 @@ const serviceIds = [
   "externalisation-internationale"
 ];
 const serviceVisuals = [
-  ["general-trade.jpg", "A produce seller's baskets at a Ghanaian market", "Paniers d’un vendeur de produits frais sur un marché ghanéen"],
+  ["general-trade.jpg", "Colorful textiles and clothing displayed at a market", "Textiles et vêtements colorés présentés sur un marché"],
   ["import-export.jpg", "A container ship crossing the sea", "Un porte-conteneurs en mer"],
   ["automotive.jpg", "Mechanic repairing a vehicle", "Mécanicien réparant un véhicule"],
   ["vehicle-rental.jpg", "Passenger van parked outdoors", "Minibus stationné à l’extérieur"],
